@@ -9,6 +9,8 @@ Source0:	http://downloads.sourceforge.net/qxgedit/%{name}-%{version}.tar.gz
 
 BuildRequires:	qt5-qttools
 BuildRequires:  qt5-qtchooser
+BuildRequires:	qt5-linguist
+BuildRequires:	qt5-linguist-tools
 BuildRequires:  qmake5
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(alsa)
