@@ -1,13 +1,15 @@
 Name:		qxgedit
 Version:	0.6.1
-Release:	%mkrel 1
+Release:	1
 Summary:	Qt XG Editor
 License:	GPLv2+
 Group:		Sound/Midi
 URL:		https://qxgedit.sourceforge.io/
 Source0:	http://downloads.sourceforge.net/qxgedit/%{name}-%{version}.tar.gz
 
-BuildRequires:	qttools5
+BuildRequires:	qt5-qttools
+BuildRequires:  qt5-qtchooser
+BuildRequires:  qmake5
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(Qt5Core)
@@ -22,7 +24,7 @@ for XG devices (eg. Yamaha DB50XG).
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--enable-debug
 
 %make_build
