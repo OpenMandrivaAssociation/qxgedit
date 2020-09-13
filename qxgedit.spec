@@ -1,5 +1,5 @@
 Name:		qxgedit
-Version:	0.6.1
+Version:	0.6.3
 Release:	1
 Summary:	Qt XG Editor
 License:	GPLv2+
@@ -48,5 +48,5 @@ desktop-file-install \
 %{_qt5_plugindir}/styles/libskulpturestyle.so
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/metainfo/%{name}.appdata.xml
-%{_iconsdir}/*/*/*/%{name}.png
+%{_iconsdir}/*/*/*/%{name}.*
 %{_mandir}/man1/%{name}*.1*
