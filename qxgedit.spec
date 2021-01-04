@@ -50,3 +50,4 @@ desktop-file-install \
 %{_datadir}/metainfo/%{name}.appdata.xml
 %{_iconsdir}/*/*/*/%{name}.*
 %{_mandir}/man1/%{name}*.1*
+%{_mandir}/*/man1/qxgedit.1.*
