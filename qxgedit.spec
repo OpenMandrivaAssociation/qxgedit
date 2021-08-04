@@ -1,5 +1,5 @@
 Name:		qxgedit
-Version:	0.9.0
+Version:	0.9.4
 Release:	1
 Summary:	Qt XG Editor
 License:	GPLv2+
