@@ -23,7 +23,7 @@ QXGEdit is a Qt GUI for editing MIDI System Exclusive files
 for XG devices (eg. Yamaha DB50XG).
 
 %prep
-%autosetup -1
+%autosetup -p1
 
 %build
 %cmake \
