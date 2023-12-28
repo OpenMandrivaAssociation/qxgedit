@@ -1,38 +1,42 @@
 Name:		qxgedit
-Version:	0.9.4
+Version:	0.9.11
 Release:	1
 Summary:	Qt XG Editor
 License:	GPLv2+
 Group:		Sound/Midi
 URL:		https://qxgedit.sourceforge.io/
-Source0:	http://downloads.sourceforge.net/qxgedit/%{name}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/qxgedit/%{name}-%{version}.tar.gz
 
-BuildRequires:	qt5-qttools
-BuildRequires:  qt5-qtchooser
-BuildRequires:	qt5-linguist
-BuildRequires:	qt5-linguist-tools
-BuildRequires:  qmake5
+BuildRequires:	cmake
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(alsa)
-BuildRequires:	pkgconfig(Qt5Core)
-BuildRequires:	pkgconfig(Qt5Widgets)
-BuildRequires:	pkgconfig(Qt5X11Extras)
+BuildRequires:	cmake(Qt6)
+BuildRequires:	qmake-qt6
+BuildRequires:	cmake(Qt6LinguistTools)
+BuildRequires:	cmake(Qt6Core)
+BuildRequires:  cmake(Qt6Svg)
+BuildRequires:  cmake(Qt6Network)
+BuildRequires:	cmake(Qt6Widgets)
+BuildRequires:	qt6-qtbase-theme-gtk3
+BuildRequires:  pkgconfig(xkbcommon-x11)
+BuildRequires:  pkgconfig(vulkan)
+BuildRequires:	pkgconfig(gig)
 
 %description
 QXGEdit is a Qt GUI for editing MIDI System Exclusive files
 for XG devices (eg. Yamaha DB50XG).
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-%configure \
-	--enable-debug
+%cmake \
+        -DCONFIG_QT6=yes
 
 %make_build
 
 %install
-%make_install
+%make_install -C build
 
 # menu
 desktop-file-install \
@@ -40,14 +44,15 @@ desktop-file-install \
 	--remove-key="Version" \
 	--set-key=Exec --set-value="%{name}" \
 	--dir %{buildroot}%{_datadir}/applications \
-	%{buildroot}%{_datadir}/applications/%{name}.desktop
+	%{buildroot}%{_datadir}/applications/org.rncbc.qxgedit.desktop
 
 %files
-%doc AUTHORS ChangeLog README TODO
+%doc ChangeLog README
 %{_bindir}/%{name}
-%{_qt5_plugindir}/styles/libskulpturestyle.so
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/metainfo/%{name}.appdata.xml
-%{_iconsdir}/*/*/*/%{name}.*
+%{_libdir}/qt6/plugins/styles/libskulpturestyle.so
+%{_datadir}/applications/org.rncbc.qxgedit.desktop
+%{_datadir}/metainfo/org.rncbc.qxgedit.metainfo.xml
+%{_iconsdir}/hicolor/32x32/apps/org.rncbc.qxgedit.png
+%{_iconsdir}/hicolor/scalable/apps/org.rncbc.qxgedit.svg
 %{_mandir}/man1/%{name}*.1*
 %{_mandir}/*/man1/qxgedit.1.*
