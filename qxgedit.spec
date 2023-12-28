@@ -49,9 +49,10 @@ desktop-file-install \
 %files
 %doc ChangeLog README
 %{_bindir}/%{name}
-#{_qt5_plugindir}/styles/libskulpturestyle.so
-#{_datadir}/applications/%{name}.desktop
-#{_datadir}/metainfo/%{name}.appdata.xml
-#{_iconsdir}/*/*/*/%{name}.*
+%{_libdir}/qt6/plugins/styles/libskulpturestyle.so
+%{_datadir}/applications/org.rncbc.qxgedit.desktop
+%{_datadir}/metainfo/org.rncbc.qxgedit.metainfo.xml
+%{_iconsdir}/hicolor/32x32/apps/org.rncbc.qxgedit.png
+%{_iconsdir}/hicolor/scalable/apps/org.rncbc.qxgedit.svg
 %{_mandir}/man1/%{name}*.1*
 %{_mandir}/*/man1/qxgedit.1.*
