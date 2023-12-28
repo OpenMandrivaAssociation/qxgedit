@@ -15,7 +15,11 @@ BuildRequires:	qmake-qt6
 BuildRequires:	cmake(Qt6LinguistTools)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:  cmake(Qt6Svg)
+BuildRequires:  cmake(Qt6Network)
 BuildRequires:	cmake(Qt6Widgets)
+BuildRequires:	qt6-qtbase-theme-gtk3
+BuildRequires:  pkgconfig(xkbcommon-x11)
+BuildRequires:  pkgconfig(vulkan)
 BuildRequires:	pkgconfig(gig)
 
 %description
