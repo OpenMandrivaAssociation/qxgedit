@@ -44,7 +44,7 @@ desktop-file-install \
 	--remove-key="Version" \
 	--set-key=Exec --set-value="%{name}" \
 	--dir %{buildroot}%{_datadir}/applications \
-	%{buildroot}%{_datadir}/applications/%{name}.desktop
+	%{buildroot}%{_datadir}/applications/org.rncbc.qxgedit.desktop
 
 %files
 %doc AUTHORS ChangeLog README TODO
