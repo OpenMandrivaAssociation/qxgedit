@@ -47,11 +47,11 @@ desktop-file-install \
 	%{buildroot}%{_datadir}/applications/org.rncbc.qxgedit.desktop
 
 %files
-%doc AUTHORS ChangeLog README TODO
+%doc ChangeLog README
 %{_bindir}/%{name}
-%{_qt5_plugindir}/styles/libskulpturestyle.so
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/metainfo/%{name}.appdata.xml
-%{_iconsdir}/*/*/*/%{name}.*
+#{_qt5_plugindir}/styles/libskulpturestyle.so
+#{_datadir}/applications/%{name}.desktop
+#{_datadir}/metainfo/%{name}.appdata.xml
+#{_iconsdir}/*/*/*/%{name}.*
 %{_mandir}/man1/%{name}*.1*
 %{_mandir}/*/man1/qxgedit.1.*
