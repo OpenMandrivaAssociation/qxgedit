@@ -1,5 +1,5 @@
 Name:		qxgedit
-Version:	0.9.11
+Version:	0.9.91
 Release:	1
 Summary:	Qt XG Editor
 License:	GPLv2+
@@ -17,7 +17,6 @@ BuildRequires:	cmake(Qt6Core)
 BuildRequires:  cmake(Qt6Svg)
 BuildRequires:  cmake(Qt6Network)
 BuildRequires:	cmake(Qt6Widgets)
-BuildRequires:	qt6-qtbase-theme-gtk3
 BuildRequires:  pkgconfig(xkbcommon-x11)
 BuildRequires:  pkgconfig(vulkan)
 BuildRequires:	pkgconfig(gig)
@@ -52,6 +51,7 @@ desktop-file-install \
 %{_libdir}/qt6/plugins/styles/libskulpturestyle.so
 %{_datadir}/applications/org.rncbc.qxgedit.desktop
 %{_datadir}/metainfo/org.rncbc.qxgedit.metainfo.xml
+%{_datadir}/qxgedit
 %{_iconsdir}/hicolor/32x32/apps/org.rncbc.qxgedit.png
 %{_iconsdir}/hicolor/scalable/apps/org.rncbc.qxgedit.svg
 %{_mandir}/man1/%{name}*.1*
