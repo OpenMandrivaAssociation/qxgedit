@@ -1,6 +1,6 @@
 Name:		qxgedit
 Version:	1.0.0
-Release:	1
+Release:	2
 Summary:	Qt XG Editor
 License:	GPLv2+
 Group:		Sound/Midi
